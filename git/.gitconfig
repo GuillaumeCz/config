@@ -1,0 +1,26 @@
+[alias]
+#	l = log --graph --decorate --pretty=oneline --abbrev-commit
+	l = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+	last = log -1 HEAD
+	lf = log --follow --oneline -- 
+	st = status
+	a = add
+	ap = add -p
+	co = commit -m 
+	con = commit --no-verify -m
+	ps = push
+	psn = push --no-verify
+	psf = push --force-with-lease
+	pl = pull
+	spm = stash push -m
+	fix = commit fixup=
+	c = checkout
+	cb = checkout -b
+	cn = checkout next
+	ron = rebase origin/next
+	rin = rebase -i next
+	bd = branch -D
+[pull]
+	ff = only
+[color]
+	ui = auto
