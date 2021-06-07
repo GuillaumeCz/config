@@ -1,0 +1,38 @@
+{
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.lineNumbers": "off",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+
+  // VIM
+  "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "vim.smartRelativeLine": true,
+  "vim.incsearch": true,
+  "vim.easymotion": true,
+  "editor.renameOnType": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.vimrc",
+  "editor.cursorSurroundingLines": 20,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.camelCaseMotion.enable": true,
+  "vim.surround": true,
+  "workbench.colorTheme": "Webstorm IntelliJ Darcula Theme"
+}
