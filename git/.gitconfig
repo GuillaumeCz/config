@@ -8,10 +8,12 @@
 	ap = add -p
 	co = commit -m 
 	con = commit --no-verify -m
+	ca = commit --amend
 	ps = push
 	psn = push --no-verify
 	psf = push --force-with-lease
 	pl = pull
+	plr = pull --rebase
 	spm = stash push -m
 	fix = commit fixup=
 	c = checkout
