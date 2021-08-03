@@ -19,6 +19,9 @@ Plug 'tpope/vim-fugitive' | Plug 'mhinz/vim-signify' " wrapper for git and displ
 Plug 'w0rp/ale' " run eslint/ prettier cmds
 Plug 'pangloss/vim-javascript'
 
+" GO
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 set rtp+=~/.vim/plugged/nerdtree
