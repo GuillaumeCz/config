@@ -8,10 +8,14 @@
   "editor.renderWhitespace": "all",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
+
+  // GO
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
 
   // VIM
   "vim.leader": "<space>",
@@ -34,5 +38,12 @@
   ],
   "vim.camelCaseMotion.enable": true,
   "vim.surround": true,
-  "workbench.colorTheme": "Webstorm IntelliJ Darcula Theme"
+  "workbench.colorTheme": "Webstorm IntelliJ Darcula Theme",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "workbench.sideBar.location": "left",
+  "editor.tokenColorCustomizations": null
 }
