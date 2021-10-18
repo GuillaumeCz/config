@@ -3,7 +3,7 @@
 
 ## Look & feel
 
-- Bracket pari Colorizer (coenraads)
+- Bracket pair Colorizer (coenraads)
 - Git Blame (Wade Anderson)
 - Material Icon theme (Philipp Kief)
 - Vim (vscodevim)
