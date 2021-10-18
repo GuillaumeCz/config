@@ -58,6 +58,20 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let g:ale_fixers = { 'javascript': ['eslint'], }
 let g:ale_fix_on_save = 1
 
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+" Go auto import
+let g:go_fmt_command = "goimports"
+
+" Go status line types/signature
+let g:go_auto_type_info = 1
+
 set relativenumber
+set number
 set ignorecase
 set smartcase
