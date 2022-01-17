@@ -12,3 +12,7 @@ A session is composed of 1* panes.
 Increase / decrease the size of the current pane: `prefix key + arrow key`
 
 Change the window: `prefix key + <number>`
+
+Activate copy mode: `prefix key + [`
+Navigate with vim keys. Select with `v` and copy with `y`.
+
