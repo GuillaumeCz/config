@@ -11,7 +11,10 @@ Plug 'wellle/targets.vim' " add new text object (can delete between comma with d
 Plug 'machakann/vim-highlightedyank' " highlight briefely every yanked text
 Plug 'chaoren/vim-wordmotion' " camel case and other motion
 Plug 'itchyny/lightline.vim' " Status bar
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind']} | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc <3
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
 
 Plug 'tpope/vim-fugitive' | Plug 'mhinz/vim-signify' " wrapper for git and display git diff in the left gutter
 
@@ -24,17 +27,27 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
-set rtp+=~/.vim/plugged/nerdtree
-
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Nerdtree
-nnoremap <C-t> :NERDTreeFocus<CR>
+"" COC
+" use <cr> to confirm completion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 set clipboard+=unnamedplus
+
+" increase space for displaying messages
+set cmdheight=2
 
 " save undo trees in file
 set undofile
@@ -44,16 +57,6 @@ set undodir=~/.vim/undo
 set undolevels=10000
 
 syntax on
-
-" Start NERDTree when vim is started and put the cursor back in the other
-" window
-autocmd VimEnter * NERDTree
-
-autocmd BufWinEnter * silent NERDTreeMirror
-
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
 
 let g:ale_fixers = { 'javascript': ['eslint'], }
 let g:ale_fix_on_save = 1
