@@ -1,37 +1,47 @@
 [user]
-	name = GuillaumeC
-	email = g.couzy@bee-buzziness.com
+	name = Guillaume
+	email = guillaume.couzy@tolteck.com
 [core]
 	editor = nvim
 
 [alias]
 	l = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
 	ll = l origin..HEAD
-	last = log -1 HEAD
 	st = status
 	a = add
 	ap = add -p
-	co = commit -m 
-	wip = commit --all -m "wip"
-	cowip = co "wip"
-	con = commit --no-verify -m
+	co = commit
+	con = commit --no-verify
+	wip = commit -m "wip" --no-verify
+  fix = commit --fixup
 	ca = commit --amend
-	fix = commit --fixup=
 	ps = push
-	psn = push --no-verify
 	psf = push --force-with-lease
 	pl = pull
 	plr = pull --rebase
 	c = checkout
 	cb = checkout -b
 	cm = checkout master
+  r = rebase
 	rom = rebase origin/master
 	rim = rebase -i master
 	rima = rim --autosquash
 	b = branch
 	bd = branch -D
 	d = diff
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	cl = checkout -
+  cp = cherry-pick
+  res = checkout --
+  resa = checkout -- .
 [pull]
 	ff = only
 [color]
 	ui = auto
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
