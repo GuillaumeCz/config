@@ -1,80 +1,77 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-
-let &packpath = &runtimepath
-source ~/.vimrc
-
-call plug#begin("~/.vim/plugged")
-
-Plug 'tpope/vim-commentary' " keystroke to comment automatically
-Plug 'henrik/vim-indexed-search' " display the result when searching (At match #N out of M matches)
-Plug 'wellle/targets.vim' " add new text object (can delete between comma with di, and else)
-Plug 'machakann/vim-highlightedyank' " highlight briefely every yanked text
-Plug 'chaoren/vim-wordmotion' " camel case and other motion
-Plug 'itchyny/lightline.vim' " Status bar
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc <3
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-
-
-Plug 'tpope/vim-fugitive' | Plug 'mhinz/vim-signify' " wrapper for git and display git diff in the left gutter
-
-" JS 
-Plug 'w0rp/ale' " run eslint/ prettier cmds
-Plug 'pangloss/vim-javascript'
-
-" GO
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'digitaltoad/vim-jade'
+Plug 'raimondi/delimitmate'
+Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
+Plug 'kshenoy/vim-signature'
 call plug#end()
+
+set mouse=
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-"" COC
-" use <cr> to confirm completion
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-set clipboard+=unnamedplus
-
-" increase space for displaying messages
-set cmdheight=2
-
-" save undo trees in file
-set undofile
-set undodir=~/.vim/undo
-
-" number of undo saved
-set undolevels=10000
-
+" Enable plugins and load plugins for the detected file type
+filetype plugin indent on
+" Turn syntax highlighting on
 syntax on
 
-let g:ale_fixers = { 'javascript': ['eslint'], }
-let g:ale_fix_on_save = 1
+highlight SignColumn ctermbg=16 guibg=#000000
 
-" Go syntax highlighting
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_operators = 1
-
-" Go auto import
-let g:go_fmt_command = "goimports"
-
-" Go status line types/signature
-let g:go_auto_type_info = 1
+set wrap
+set autoindent
+set smartindent
+set tabstop=2 shiftwidth=2 expandtab
 
 set relativenumber
 set number
 set ignorecase
 set smartcase
+set cc=80
+set noswapfile
+set so=20
+set textwidth=80
+
+set updatetime=100
+set signcolumn=yes
+
+set autoread
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+let mapleader = " "
+
+" Fzf
+noremap <leader>f :Ag<CR>
+noremap <leader>ff :Files<CR>
+noremap <leader>F :GFiles<CR>
+noremap <Tab><Tab> :GFiles<CR>
+
+
+noremap <C-z> <C-r>
+
+
+" Coc
+set hidden
+set cmdheight=2
+set shortmess+=c
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" format selected code
+"xmap <leader>f <Plug>(coc-format-selected)
+"nmap <leader>f <Plug>(coc-format-selected)
+" Apply AutoFix to problem on the current line.
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
