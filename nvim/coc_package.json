@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-css": ">=2.1.0",
+    "coc-git": ">=2.7.0",
+    "coc-html": ">=1.8.0",
+    "coc-eslint": ">=1.7.0",
+    "coc-html-css-support": ">=0.5.2",
+    "coc-tsserver": ">=2.2.0",
+    "coc-explorer": ">=0.26.6",
+    "coc-webview": ">=0.12.0",
+  }
+}
