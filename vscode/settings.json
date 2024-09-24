@@ -1,49 +1,29 @@
 {
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "editor.tabCompletion": "on",
-  "editor.formatOnSave": true,
-  "editor.renderWhitespace": "all",
-  "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.lineNumbers": "on",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
-
-  // GO
-  "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast"],
-
-  // VIM
+  "workbench.colorTheme": "Darcula Theme from IntelliJ",
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
   "vim.smartRelativeLine": true,
   "vim.incsearch": true,
   "vim.easymotion": true,
-  "editor.renameOnType": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.vimrc",
   "editor.cursorSurroundingLines": 20,
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
   "vim.camelCaseMotion.enable": true,
   "vim.surround": true,
-  "workbench.colorTheme": "Webstorm IntelliJ Darcula Theme",
-  "go.toolsManagement.autoUpdate": true,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "workbench.sideBar.location": "left",
-  "editor.tokenColorCustomizations": null
+  "puglint.enable": true,
+  "editor.rulers": [
+    80
+  ],
+  "gitblame.statusBarMessageClickAction": "Open tool URL",
+  "workbench.startupEditor": "none",
+  "editor.fontLigatures": true,
+  "keyboard.dispatch": "keyCode"
 }
